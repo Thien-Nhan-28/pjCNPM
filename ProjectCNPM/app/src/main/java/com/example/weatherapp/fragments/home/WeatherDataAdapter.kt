@@ -68,7 +68,7 @@ class WeatherDataAdapter(
                     false
                 )
             )
-            //của tuiiii
+            //hiện thị dữ liệu trả về
             INDEX_FORECAST -> ForecastViewHolder(
                 ItemContainerForecastBinding.inflate(
                     LayoutInflater.from(parent.context),
@@ -92,7 +92,7 @@ class WeatherDataAdapter(
         when (holder) {
             is CurrentLocationViewHolder -> holder.bind(weatherData[position] as CurrentLocation)
             is CurrentWeatherViweHolder -> holder.bind(weatherData[position] as CurrentWeather)
-            is ForecastViewHolder -> holder.bind(weatherData[position] as Forecast) //của tuiiii
+            is ForecastViewHolder -> holder.bind(weatherData[position] as Forecast) //gọi phương thức bind và truyền vào dữ liệu  được ép kiểu thành Forecast.
         }
         // 1. Lấy nút chuyển tới trang thông tin thời tiết trong tuần
         val buttonWeek = holder.itemView.findViewById<Button>(R.id.week)
@@ -145,12 +145,13 @@ class WeatherDataAdapter(
         }
     }
 
-    //của tuiiii
+    //quản lý và hiển thị dữ liệu cho từng item của RecyclerView
     inner class ForecastViewHolder(
         private val binding: ItemContainerForecastBinding
     ) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(forecast: Forecast) {
-            with(binding) {
+        //hàm bind: thiết lập các thuộc tính của giao diện thời tiết bao gồm: ngày giờ, nhiệt độ, cảm giác như ... độ, icon thời tiết phù hợp với nhiệt độ đó(có mưa, mây, hay mặt trời, mặt trăng,..)
+        fun bind(forecast: Forecast){
+            with(binding){
                 textTime.text = forecast.time
                 textTemperature.text = String.format("%s\u00B0C", forecast.temperature)
                 textFeelsLikeTemperature.text =
