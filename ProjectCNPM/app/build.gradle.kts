@@ -9,12 +9,14 @@ android {
 
     defaultConfig {
         applicationId = "com.example.weatherapp"
-        minSdk = 24
+        minSdk = 21
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        // Kích hoạt Multidex becasue quantity method > 6*.***
+        multiDexEnabled = true
     }
 
     buildTypes {
@@ -69,5 +71,4 @@ dependencies {
     implementation("com.squareup.picasso:picasso:2.71828")
 
     implementation("androidx.multidex:multidex:2.0.1")
-
 }

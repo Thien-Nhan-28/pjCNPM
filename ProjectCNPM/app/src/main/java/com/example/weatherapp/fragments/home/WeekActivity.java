@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import androidx.appcompat.app.AppCompatActivity;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -22,8 +23,6 @@ import com.example.weatherapp.data.CustomAdapter;
 import com.example.weatherapp.R;
 import com.example.weatherapp.data.Thoitiet;
 import com.example.weatherapp.data.Hour;
-//import com.example.weatherapp.data.forecast7daysAdapter;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -49,6 +48,7 @@ public class WeekActivity extends AppCompatActivity {
         setContentView(R.layout.activity_week);
         Anhxa();
         Intent intent = getIntent();
+
         String city = intent.getStringExtra("name");
         Log.d("Ket qua", "City received: " + city);
         if (city == null || city.isEmpty()) {
@@ -101,6 +101,7 @@ public class WeekActivity extends AppCompatActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
+
                         Log.d("Ket qua", "Response received");
                         try {
                             JSONObject jsonObject = new JSONObject(response);

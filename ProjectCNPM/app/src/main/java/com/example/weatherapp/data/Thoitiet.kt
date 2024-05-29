@@ -1,3 +1,4 @@
+
 package com.example.weatherapp.data
 
 import android.os.Parcel

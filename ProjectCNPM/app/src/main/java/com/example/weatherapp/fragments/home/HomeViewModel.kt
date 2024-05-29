@@ -88,6 +88,7 @@ class HomeViewModel(private val weatherDataRepository: WeatherDataRepository) :V
                         humidity = weatherData.current.humidity,
                         chanceOfRain = weatherData.forecast.forecastDay.first().day.chanceOfRain
                     ),
+                    //thêm các thuộc tính như: giờ, nhiệt độ, cảm giác như .. độ, icon thời tiết vào hàm getWeatherData
                     forecast = weatherData.forecast.forecastDay.first().hour.map{
                         Forecast(
                             time = getForestcastTime(it.time),
@@ -105,7 +106,7 @@ class HomeViewModel(private val weatherDataRepository: WeatherDataRepository) :V
     private fun emitWeatherDataUiState(
         isLoading: Boolean =false,
         currentWeather: CurrentWeather? = null,
-        forecast: List<Forecast>? = null,
+        forecast: List<Forecast>? = null, //thêm danh sác thời tiết-giờ của ngày hiện tại vào giao diện
         error: String? =null
     ){
         val weatherDataState = WeatherDataState(isLoading, currentWeather, forecast, error)
@@ -116,10 +117,10 @@ class HomeViewModel(private val weatherDataRepository: WeatherDataRepository) :V
     data class WeatherDataState(
         val isLoading: Boolean,
         val currentWeather: CurrentWeather?,
-        val forecast: List<Forecast>?,
+        val forecast: List<Forecast>?, //thêm danh sác thời tiết-giờ của ngày hiện tại vào giao diện
         val error: String?
     )
-
+    // gọi hàm getForestcastTime lấy ngày giờ, tháng năm của ngày hiện tại
     private fun getForestcastTime(dateTime: String): String {
         val pattern = SimpleDateFormat("yyyy-MM-dd HH:mm" , Locale.getDefault())
         val date = pattern.parse(dateTime) ?: return dateTime

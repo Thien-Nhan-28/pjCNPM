@@ -5,13 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".fragments.home.WeekActivity">
+    tools:context=".fragments.home.WeekActivity"
+    android:background="@drawable/background">
 
     <ImageView
         android:id="@+id/back"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:src="@drawable/ic_launcher_background" />
+        android:src="@drawable/back"/>
 
     <TextView
         android:id="@+id/textViewNameCity"
@@ -19,9 +20,12 @@
         android:layout_height="wrap_content"
         android:text="Forecast is loading..."
         android:textSize="34sp" />
+        android:textColor="@color/black"
 
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        />
 </LinearLayout>

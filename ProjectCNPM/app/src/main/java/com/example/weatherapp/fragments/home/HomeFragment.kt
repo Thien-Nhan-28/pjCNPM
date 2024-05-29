@@ -104,7 +104,7 @@ class HomeFragment : Fragment() {
                 weatherDataState.currentWeather?.let { currentWeather ->
                     weatherDataAdapter.setCurrentWeather(currentWeather)
                 }
-                // của tuii
+                // gọi hàm setForecastData hiện thị lên giao diện trang chủ của Weather APP
                 weatherDataState.forecast?.let { forecasts ->
                     weatherDataAdapter.setForecastData(forecasts)
                 }

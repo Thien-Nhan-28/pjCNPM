@@ -9,6 +9,7 @@ import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
 import com.example.weatherapp.R
+import com.example.weatherapp.Thoitiet
 import com.squareup.picasso.Picasso
 
 class CustomAdapter(private val context: Context, private val arrayList: ArrayList<Thoitiet>) : BaseAdapter() {
@@ -38,8 +39,8 @@ class CustomAdapter(private val context: Context, private val arrayList: ArrayLi
 
         txtDay.text = thoitiet.day
         txtStatus.text = thoitiet.status
-        txtMaxTemp.text = thoitiet.maxTerm
-        txtMinTemp.text = thoitiet.minTerm
+        txtMaxTemp.text = String.format("%s\u00B0C", thoitiet.maxTerm)
+        txtMinTemp.text = String.format("%s\u00B0C", thoitiet.minTerm)
 
         Picasso.get().load(thoitiet.image).into(imgStatus)
 
