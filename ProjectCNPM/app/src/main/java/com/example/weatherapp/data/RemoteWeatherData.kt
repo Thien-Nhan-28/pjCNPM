@@ -27,7 +27,7 @@ data class DayRemote(
     @SerializedName("daily_chance_of_rain") val chanceOfRain: Int
 
 )
-
+//của tuiiii
 data class ForecastHourRemote(
     val time: String,
     @SerializedName("temp_c") val temperature: Float,
