@@ -26,6 +26,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".fragments.home.WeekActivity"/>
+        <activity android:name=".fragments.home.Forecast7DaysActivity"/>
     </application>
 
 </manifest>

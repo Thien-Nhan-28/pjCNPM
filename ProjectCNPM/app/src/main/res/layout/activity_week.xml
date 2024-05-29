@@ -18,9 +18,9 @@
         android:id="@+id/textViewNameCity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tên Thành Phố"
+        android:text="Forecast is loading..."
+        android:textSize="34sp" />
         android:textColor="@color/black"
-        android:textSize="26sp" />
 
     <ListView
         android:id="@+id/listView"

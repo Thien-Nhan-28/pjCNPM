@@ -26,7 +26,6 @@ class CustomAdapter(private val context: Context, private val arrayList: ArrayLi
         return 0
     }
 
-    //
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         val view = inflater.inflate(R.layout.item_lv, null)
